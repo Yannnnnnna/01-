@@ -4,6 +4,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "Kruskal.h"
+#include "prim.h"
 
 void setupMGraph(MGraph *graph, int initValue) {
     char *names[] = {
@@ -50,6 +51,22 @@ void test01() {
     free(result);
 }
 
+void test02() {
+    MGraph graph;
+    EdgeSet *result;
+    int sum;
+
+    setupMGraph(&graph, INF);
+    result = (EdgeSet *) malloc(sizeof(EdgeSet) * (graph.nodeNum - 1));
+    sum = PrimMGraph(&graph, 0, result);
+    printf("Prim weight: %d\n", sum);
+    for (int i = 0; i < graph.nodeNum - 1; ++i) {
+        printf("edge %d: [%s] --- <%d> --- [%s]\n", i + 1,
+               graph.vex[result[i].begin].show, result[i].weight, graph.vex[result[i].end].show);
+    }
+    free(result);
+}
+
 int main() {
-    test01();
+    test02();
 }
