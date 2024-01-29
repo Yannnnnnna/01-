@@ -31,7 +31,7 @@ typedef struct {
 AGraph *creatAGraph(int n);
 //释放邻接表
 void releaseAGraph(AGraph *graph);
-
+void visitAGraphNode(arcNode *node);
 //初始化表
 void initAGraph(AGraph *graph, char *detail[], int num, int directed);
 //建立边的关系
