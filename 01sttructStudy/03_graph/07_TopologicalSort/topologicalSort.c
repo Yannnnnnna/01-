@@ -58,7 +58,7 @@ int topologicalSortGraph(AGraph *graph, int **res, int *len) {
         result[count] = idx;
         ++count;
         //访问
-        //visitAGraphNode(&graph->nodes[idx]);
+        //visitAGraphNode(&03_graph->nodes[idx]);
         //更新入度
         arcEdge *edge = graph->nodes[idx].firstEdge;
         while (edge){

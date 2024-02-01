@@ -144,7 +144,7 @@ static void  freeNode(AVL_Tree *tree, AVL_Node *node){
 void releaseAVLTree(AVL_Tree *tree) {
     if(tree){
         freeNode(tree, tree->root);
-        printf("AVL Tree have %d node\n", tree->count);
+        printf("AVL 02_Tree have %d node\n", tree->count);
     }
 
 }
